@@ -5,7 +5,7 @@ plugins {
     id("net.labymod.gradle.volt")
 }
 
-val minecraftGameVersion = "1.19"
+val minecraftGameVersion = "1.19.2"
 val minecraftVersionTag: String = "1.19"
 
 version = "1.0.0"
