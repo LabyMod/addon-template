@@ -1,0 +1,10 @@
+{
+  "example": {
+    "settings": {
+      "name": "ExampleAddon",
+      "enabled": {
+        "name": "Enabled"
+      }
+    }
+  }
+}
