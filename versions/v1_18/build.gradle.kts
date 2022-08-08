@@ -10,11 +10,6 @@ val minecraftVersionTag: String = "1.18"
 
 version = "1.0.0"
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
 minecraft {
     version(minecraftGameVersion)
     platform(org.spongepowered.gradle.vanilla.repository.MinecraftPlatform.CLIENT)
