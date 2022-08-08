@@ -69,11 +69,6 @@ addon {
         //you can add maven dependencies here. the dependencies will then be downloaded by labymod.
         //mavenDependencies().add(MavenDependency("https://repo.maven.apache.org/maven2/", "com.google.guava:guava:31.1-jre"))
     }
-
-    dev {
-        releaseChannel = "improvement-addon-api"
-        commitReference = "unknown"
-    }
-
+    
     internalRelease()
 }
