@@ -28,7 +28,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("net.labymod.gradle", "addon", "0.2.42")
+        classpath("net.labymod.gradle", "addon", "0.2.44")
     }
 }
 
@@ -66,9 +66,9 @@ addon {
         description("An Example Description!")
         version(System.getenv().getOrDefault("VERSION", "0.0.0"))
 
-        //you can add maven dependencies here. the dependencies will then be downloaded by labymod.
-        //mavenDependencies().add(MavenDependency("https://repo.maven.apache.org/maven2/", "com.google.guava:guava:31.1-jre"))
+        //if you want to add dependencies, go to the build.gradle.kts in the core or api module
+        //add take a look in the dependencies block
     }
-    
+
     internalRelease()
 }
