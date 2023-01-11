@@ -22,7 +22,7 @@ dependencies {
 }
 
 addon {
-    internalRelease()
+    snapshotRelease()
 }
 
 java {
