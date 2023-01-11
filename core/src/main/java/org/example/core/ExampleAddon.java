@@ -1,10 +1,10 @@
 package org.example.core;
 
-import com.google.inject.Singleton;
 import net.labymod.api.addon.LabyAddon;
 import net.labymod.api.models.addon.annotation.AddonListener;
 import org.example.core.commands.ExamplePingCommand;
 import org.example.core.listener.ExampleGameTickListener;
+import javax.inject.Singleton;
 
 @Singleton
 @AddonListener

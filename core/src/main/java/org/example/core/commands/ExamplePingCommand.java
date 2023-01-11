@@ -1,9 +1,9 @@
 package org.example.core.commands;
 
-import com.google.inject.Inject;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.labymod.api.client.chat.command.Command;
+import javax.inject.Inject;
 
 public class ExamplePingCommand extends Command {
 
