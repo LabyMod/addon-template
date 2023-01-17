@@ -2,8 +2,8 @@ buildscript {
     repositories {
         var bearerToken = System.getenv("LABYMOD_BEARER_TOKEN")
 
-        if (bearerToken == null && project.hasProperty("net.labymod.distributor.bearer-token")) {
-            bearerToken = project.property("net.labymod.distributor.bearer-token").toString()
+         if (bearerToken == null && env.TOKEN.isPresent) {
+            bearerToken = env.TOKEN.value
         }
 
         maven("https://dist.labymod.net/api/v1/maven/release/") {
@@ -72,4 +72,5 @@ addon {
     }
 
     snapshotRelease()
+
 }
