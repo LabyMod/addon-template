@@ -34,6 +34,7 @@ buildscript {
 
 plugins {
     id("java-library")
+    id("co.uzzu.dotenv.gradle") version "2.0.0"
 }
 
 group = "org.example"
