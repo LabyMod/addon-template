@@ -4,14 +4,12 @@ import net.labymod.api.event.Phase;
 import net.labymod.api.event.Subscribe;
 import net.labymod.api.event.client.lifecycle.GameTickEvent;
 import org.example.core.ExampleAddon;
-import javax.inject.Inject;
 
 public class ExampleGameTickListener {
 
   private final ExampleAddon addon;
 
-  @Inject
-  private ExampleGameTickListener(ExampleAddon addon) {
+  public ExampleGameTickListener(ExampleAddon addon) {
     this.addon = addon;
   }
 

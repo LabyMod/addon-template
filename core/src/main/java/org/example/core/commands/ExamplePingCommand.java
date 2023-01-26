@@ -1,14 +1,12 @@
 package org.example.core.commands;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
 import net.labymod.api.client.chat.command.Command;
-import javax.inject.Inject;
+import net.labymod.api.client.component.Component;
+import net.labymod.api.client.component.format.NamedTextColor;
 
 public class ExamplePingCommand extends Command {
 
-  @Inject
-  private ExamplePingCommand() {
+  public ExamplePingCommand() {
     super("ping", "pong");
   }
 

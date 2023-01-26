@@ -24,9 +24,9 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew remapJar --full-stacktrace
+        run: ./gradlew build --full-stacktrace
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: Artifacts
-          path: build/libs/*
+          path: build/libs/*-release.jar
