@@ -1,7 +1,7 @@
 rootProject.name = "labymod4-addon-template"
 
 pluginManagement {
-    val labyGradlePluginVersion = "0.3.7"
+    val labyGradlePluginVersion = "0.3.9"
     plugins {
         id("net.labymod.gradle") version (labyGradlePluginVersion)
     }

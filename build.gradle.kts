@@ -27,7 +27,7 @@ labyMod {
                 "1.18.2",
                 "1.19.2",
                 "1.19.3",
-                "23w04a"
+                "23w05a"
         ) { version, provider ->
             configureRun(provider, version)
         }
