@@ -23,6 +23,7 @@ labyMod {
     minecraft {
         registerVersions(
                 "1.8.9",
+                "1.12.2",
                 "1.17.1",
                 "1.18.2",
                 "1.19.2",
