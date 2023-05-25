@@ -72,6 +72,7 @@ run/
 
 # LabyGradle | Addon Plugin
 build-data.txt
+.assetsroot
 
 # Don't ignore libraries
 !libs/*.jar

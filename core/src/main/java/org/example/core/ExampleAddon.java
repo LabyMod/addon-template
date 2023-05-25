@@ -8,7 +8,6 @@ import org.example.core.listener.ExampleGameTickListener;
 @AddonMain
 public class ExampleAddon extends LabyAddon<ExampleConfiguration> {
 
-
   @Override
   protected void enable() {
     this.registerSettingCategory();
