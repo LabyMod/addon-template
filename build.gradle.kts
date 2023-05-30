@@ -1,11 +1,15 @@
+import net.labymod.gradle.core.dsl.getClientRepository
+
 plugins {
     id("java-library")
     id("net.labymod.gradle")
     id("net.labymod.gradle.addon")
 }
 
-group = "org.example"
-version = "1.0.0"
+allprojects {
+    group = "org.example"
+    version = "0.1.0"
+}
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
@@ -17,7 +21,7 @@ labyMod {
         author = "Example Author"
         description = "Example Description"
         minecraftVersion = "*"
-        version = System.getenv().getOrDefault("VERSION", "0.0.1")
+        version = System.getenv().getOrDefault("VERSION", project.version.toString())
     }
 
     minecraft {
@@ -51,6 +55,13 @@ subprojects {
     plugins.apply("net.labymod.gradle")
     plugins.apply("net.labymod.gradle.addon")
 
+    tasks.withType<JavaCompile>().configureEach {
+        sourceCompatibility = JavaVersion.VERSION_17.toString()
+        targetCompatibility = JavaVersion.VERSION_17.toString()
+
+        options.encoding = "UTF-8"
+    }
+
     repositories {
         maven("https://libraries.minecraft.net/")
         maven("https://repo.spongepowered.org/repository/maven-public/")
@@ -59,22 +70,20 @@ subprojects {
 
 fun configureRun(provider: net.labymod.gradle.core.minecraft.provider.VersionProvider, gameVersion: String) {
     provider.runConfiguration {
+        val obfuscatedClientJar = getClientRepository(gameVersion).resolve("client-$gameVersion-obfuscated.jar")
+
         mainClass = "net.minecraft.launchwrapper.Launch"
         jvmArgs("-Dnet.labymod.running-version=${gameVersion}")
+        jvmArgs("-Dnet.labymod.obfuscated-jar-path=${obfuscatedClientJar.toAbsolutePath()}")
         jvmArgs("-Dmixin.debug=true")
         jvmArgs("-Dnet.labymod.debugging.all=true")
-        jvmArgs("-Dmixin.env.disableRefMap=true")
 
-        args("--tweakClass", "net.labymod.core.loader.vanilla.launchwrapper.LabyModLaunchWrapperTweaker")
+        args("--tweakClass", "net.labymod.core.loader.vanilla.launchwrapper.Java17LabyModLaunchWrapperTweaker")
         args("--labymod-dev-environment", "true")
         args("--addon-dev-environment", "true")
     }
 
-    provider.javaVersion = when (gameVersion) {
-        else -> {
-            JavaVersion.VERSION_17
-        }
-    }
+    provider.javaVersion = JavaVersion.VERSION_17
 
     provider.mixin {
         val mixinMinVersion = when (gameVersion) {
