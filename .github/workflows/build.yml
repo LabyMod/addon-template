@@ -7,10 +7,6 @@ on:
     branches: [ "master", "main" ]
   workflow_dispatch:
 
-env:
-  PUBLIC_RELEASE_BUILD: true
-  PUBLIC_RELEASE_BUILD_TOKEN: ${{ secrets.PUBLIC_RELEASE_BUILD_TOKEN }}
-
 jobs:
   build:
     runs-on: ubuntu-latest

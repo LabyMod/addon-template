@@ -29,7 +29,8 @@ labyMod {
                 "1.18.2",
                 "1.19.2",
                 "1.19.3",
-                "1.19.4"
+                "1.19.4",
+                "1.20.1"
         ) { version, provider ->
             configureRun(provider, version)
         }
@@ -42,7 +43,7 @@ labyMod {
     }
 
     addonDev {
-        snapshotRelease()
+        productionRelease()
     }
 }
 
