@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.0.0"
+version = System.getenv().getOrDefault("VERSION", "1.0.0")
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
@@ -17,7 +17,7 @@ labyMod {
         author = "Example Author"
         description = "Example Description"
         minecraftVersion = "*"
-        version = System.getenv().getOrDefault("VERSION", "0.0.1")
+        version = getVersion().toString()
     }
 
     minecraft {
