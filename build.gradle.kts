@@ -75,7 +75,7 @@ fun configureRun(provider: net.labymod.gradle.core.minecraft.provider.VersionPro
 
     provider.javaVersion = when (gameVersion) {
         else -> {
-            JavaVersion.VERSION_17
+            JavaVersion.VERSION_21
         }
     }
 
