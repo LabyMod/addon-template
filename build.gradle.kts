@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.0.0"
+version = System.getenv().getOrDefault("VERSION", "1.0.0")
 
 labyMod {
     defaultPackageName = "org.example" //change this to your main package name (used by all modules)
@@ -15,7 +15,7 @@ labyMod {
         author = "Example Author"
         description = "Example Description"
         minecraftVersion = "*"
-        version = System.getenv().getOrDefault("VERSION", "0.0.1")
+        version = getVersion().toString()
     }
 
     minecraft {
