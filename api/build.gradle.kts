@@ -1,18 +1,9 @@
-version = "0.1.0"
-
-plugins {
-    id("java-library")
-}
+import net.labymod.labygradle.common.extension.LabyModAnnotationProcessorExtension.ReferenceType
 
 dependencies {
     labyApi("api")
 }
 
-labyModProcessor {
-    referenceType = net.labymod.gradle.core.processor.ReferenceType.INTERFACE
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+labyModAnnotationProcessor {
+    referenceType = ReferenceType.INTERFACE
 }
