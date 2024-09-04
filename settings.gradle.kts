@@ -1,7 +1,7 @@
 rootProject.name = "labymod4-addon-template"
 
 pluginManagement {
-    val labyGradlePluginVersion = "0.5.0"
+    val labyGradlePluginVersion = "0.5.1"
     buildscript {
         repositories {
             maven("https://dist.labymod.net/api/v1/maven/release/")
