@@ -13,7 +13,12 @@ labyMod {
 
     minecraft {
         registerVersion(versions.toTypedArray()) {
-
+            runs {
+                getByName("client") {
+                    // When the property is set to true, you can log in with a Minecraft account
+                    // devLogin = true
+                }
+            }
         }
     }
 
@@ -23,7 +28,7 @@ labyMod {
         author = "Example Author"
         description = "Example Description"
         minecraftVersion = "*"
-        version = version.toString()
+        version = rootProject.version.toString()
     }
 }
 
