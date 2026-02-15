@@ -38,4 +38,9 @@ subprojects {
 
     group = rootProject.group
     version = rootProject.version
+
+    extensions.findByType(JavaPluginExtension::class.java)?.apply {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
 }
