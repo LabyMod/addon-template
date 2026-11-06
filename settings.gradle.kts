@@ -10,7 +10,7 @@ pluginManagement {
     }
 
     plugins {
-        id("net.labymod.labygradle.settings") version "0.9.0"
+        id("net.labymod.labygradle.settings") version "0.11.0"
     }
 }
 
